@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/valorant-logo-icon.png" type="image/x-icon">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+        <script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+        <script src="https://kit.fontawesome.com/b73c61d54d.js" crossorigin="anonymous"></script>
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="./style.css">
+        <title>Valorant</title>
+    </head>
+    <body>
+        <nav id="menu" class="menu">
+            <div class="actionbar">
+                <div>
+                    <button id="menuBtn">
+                       <i class="fas fa-bars"></i>
+                    </button>
+                    <h3 class="menuText">Menu</h3>
+                </div>
+            </div>
+            <ul class="optionsBar">
+                <li class="menuItem">
+                    <a href="Login/Login.html" class="menuOption">
+                        <i class="fa-solid fa-house"></i>
+                        <h5 class="menuText">Home</h5>
+                    </a>
+                </li>
+                <li class="menuItem">
+                    <a href="Agentes/Agentes.html"id="personagemBtn" class="menuOption">
+                        <i class="fas fa-user-alt"></i>
+                        <h5 class="menuText">Agentes</h5>
+                    </a> 
+                    
+                </li>
+                <li class="menuItem">
+                    <a href="Mapa/Mapas.html" id="mapaBtn" class="menuOption">
+                      <i class="fa-solid fa-map-location-dot"></i>
+                     <h5 class="menuText">Mapas</h5>
+                    </a>
+                </li>
+                <li class="menuItem">
+                    <a href="Arsenal/Arsenal de Valorant.html" id="armasBtn" class="menuOption">
+                        <i class="fa-solid fa-person-rifle"></i>
+                        <h5 class="menuText">Arsenal</h5>
+                    </a>
+                </li>
+            </ul>
+            <div class="menuUser">
+                <a href="#">
+                    <div>
+                        <img src="img/Viper.jpg" alt="">
+                    </div>
+                    <h5 class="Username menuText">Vava</h5>
+                    <p class="menuText"><i class="fas fa-chevron-right"></i></p>
+                </a>
+                <div class="userInfo">
+                    <div>
+                        <h1><i class="fas fa-exclamation-circle"></i></h1>
+                        <p>Informação</p>
+                    </div>
+                </div>
+            </div>
+            <div class="themeBar">
+                <div>
+                    <button id="themeChangeBtn"><i class="fas"></i></button>
+                </div>
+            </div>
+        </nav>
+    
+
+        <div class="app">
+            <div class="cardList">
+                <button class="cardList__btn btn btn--left">
+                    <div class="icon">
+                        <svg>
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                </button>
+        
+                <div class="cards__wrapper">
+                    <div class="card current--card">
+                        <div class="card__image">
+                            <img src="img/viperr.png" alt="">
+                        </div>
+                    </div>
+        
+                    <div class="card next--card">
+                        <div class="card__image">
+                            <img src="img/Yoru.jpg" alt="">
+                        </div>
+                    </div>
+        
+                    <div class="card previous--card">
+                        <div class="card__image">
+                            <img src="img/omen.png" alt="">
+                        </div>
+                       </div>
+                </div>
+        
+                <button class="cardList__btn btn btn--right">
+                    <div class="icon">
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        
+            <div class="infoList">
+                <div class="info__wrapper">
+                    <div class="info current--info">
+                        <h1 class="text name">Viper</h1>
+                        <h4 class="text location">Valorant</h4>
+                    </div>
+        
+                    <div class="info next--info">
+                        <h1 class="text name">Yoru</h1>
+                        <h4 class="text location">Valorant</h4>
+                    </div>
+        
+                    <div class="info previous--info">
+                        <h1 class="text name">Omen</h1>
+                        <h4 class="text location">Valorant</h4>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="app__bg">
+                <div class="app__bg__image current--image">
+                    <img src="img/_jogadores_.webp" alt="">
+                </div>
+        
+                <div class="app__bg__image next--image">
+                    <img src="img/val2.jpg" alt="">
+                </div>
+        
+                <div class="app__bg__image next--image">
+                    <img src="img/val3.jpg" alt="">
+                </div>
+                
+                <div class="app__bg__image previous--image">
+                    <img src="img/val4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading__wrapper">
+            <div class="loader--text">Loading...</div>
+            <div class="loader">
+                <span></span>
+            </div>
+        </div>
+
+        <svg class="icons" style="display: none;">
+            <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                <polyline points='328 112 184 256 328 400' style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+            </symbol>
+            <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                <polyline points='184 112 328 256 184 400' style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+            </symbol>
+        </svg>
+    </body>
+</html>

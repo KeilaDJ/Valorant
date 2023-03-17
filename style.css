@@ -1,0 +1,583 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
+/* menu */
+:root {
+  --bg-black-100: #c7c3c3;
+  /* --bg-black-50: #eef0f4; */
+  --bg-black-20: #f0f8fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: auto;
+  background-color: #353535;
+}
+body.dark {
+  --bg-black-100: rgb(3, 3, 3);
+  --bg-black-50: rgb(238, 230, 230);
+  --bg-black-20: #000000;
+}
+.menu {
+  position: absolute;
+  width: 60px;
+  height: 80%;
+  background-color: var(--bg-black-50);
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  margin: auto;
+  border-radius: 0.8rem;
+  transition: 0.3s ease 0.15s;
+}
+.menu.open {
+  width: 240px;
+}
+.menu a {
+  text-decoration: none;
+}
+.menu .actionbar {
+  width: 100%;
+  height: 10%;
+  padding: 0.5rem;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.menu .actionbar div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+.menu .actionbar div button {
+  background-color: rgb(255, 0, 21);
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--bg-black-100);
+  width: 45px;
+  height: 45px;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 999;
+}
+.menu .actionbar i {
+  transition: 0.3s ease;
+}
+.menu .actionbar div button:hover {
+  background-color: rgb(175, 39, 46);
+}
+.menu .actionbar div h3 {
+  width: calc(100% - 45px);
+  text-align: center;
+}
+.menu .optionsBar {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 60%;
+  padding: 0 0.5rem;
+  align-items: center;
+  flex-direction: column;
+}
+.menu .optionsBar .menuItem {
+  width: 100%;
+  height: 45px;
+  margin: 0.3rem;
+}
+.menu .optionsBar .menuItem .menuOption {
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.menu .optionsBar .menuItem .menuOption:hover {
+  background-color: rgb(255, 0, 21);
+}
+.menu .optionsBar .menuItem .menuOption i {
+  width: 45px;
+  text-align: center;
+  color: var(--bg-black-100);
+  transition: 0.3s ease-in-out;
+}
+.menu .optionsBar .menuItem .menuOption h5 {
+  width: calc(100% - 45px);
+  text-align: start;
+}
+.menuText {
+  color: var(--bg-black-20);
+  transform: translateX(-250px);
+  opacity: 0;
+  transition: transform 0.3s ease 0.1s;
+}
+.menuText.open2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu .menuUser {
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+}
+.menu .menuUser a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0.5rem;
+  position: relative;
+}
+.menu .menuUser a div {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  border-radius: 0.5rem;
+}
+.menu .menuUser a div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.menu .menuUser a .Username {
+  width: calc(70% - 45px);
+}
+.menu .menuUser a p {
+  width: calc(30% - 45px);
+}
+.menu .menuUser a:hover p {
+  animation: animArrow 0.3s ease 2;
+}
+@keyframes animArrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.menu .menuUser .userInfo {
+  position: absolute;
+  width: 7rem;
+  height: 6rem;
+  opacity: 0;
+  color: var(--bg-black-50);
+  pointer-events: none;
+  bottom: 58%;
+  left: 3.5rem;
+  transition: 0.3s ease;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+.menu .menuUser .userInfo div {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 20px);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-black-100);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.menu .menuUser .userInfo div h1 {
+  font-size: 1.5rem;
+}
+.menu .menuUser .userInfo div::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--bg-black-100);
+  transform: rotate(45deg);
+}
+.menu .menuUser:hover .userInfo {
+  pointer-events: all;
+  opacity: 1;
+  transform: scale(1);
+}
+.menu .themeBar {
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+.menu .themeBar div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+.menu .themeBar div button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--bg-black-100);
+  width: 100%;
+  height: 45px;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.menu .themeBar div button {
+  background-color: rgb(255, 0, 21);
+}
+.menu .themeBar div button i {
+  color: #fff;
+}
+.menu .optionsBar .menuItem .menuOption:hover .menuText,
+.menu .optionsBar .menuItem .menuOption:hover i,
+.menu .actionbar div button:hover i,
+.menu .themeBar div button:hover i {
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+/* slid */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.787);
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+.app__bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  opacity: 0.8;
+}
+.app__bg__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+  width: 180%;
+  height: 180%;
+  transition: transform 1000ms ease, opacity 1000ms ease;
+  overflow: hidden;
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app__bg__image.current--image {
+  opacity: 1;
+  --image-translate-offset: 0;
+}
+.app__bg__image.previous--image, .app__bg__image.next--image {
+  opacity: 0;
+}
+.app__bg__image.previous--image {
+  --image-translate-offset: -25%;
+}
+.app__bg__image.next--image {
+  --image-translate-offset: 25%;
+}
+
+.cardList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: auto;
+}
+.cardList__btn {
+  --btn-size: 35px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.cardList__btn.btn--left {
+  left: -5%;
+}
+.cardList__btn.btn--right {
+  right: -5%;
+}
+.cardList__btn .icon {
+  width: 100%;
+  height: 100%;
+}
+.cardList__btn .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.cardList .cards__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card {
+  --card-translateY-offset: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+  display: inline-block;
+  width: var(--card-width);
+  height: var(--card-height);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+  user-select: none;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+  opacity: calc(1 - var(--opacity));
+}
+.card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card.current--card {
+  --current-card-rotation-offset: 0;
+  --card-translateX-offset: 0;
+  --card-rotation-offset: var(--current-card-rotation-offset);
+  --card-scale-offset: 1.2;
+  --opacity: 0.8;
+}
+.card.previous--card {
+  --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+  --card-rotation-offset: 25deg;
+}
+.card.next--card {
+  --card-translateX-offset: calc(var(--card-width) * 1.1);
+  --card-rotation-offset: -25deg;
+}
+.card.previous--card, .card.next--card {
+  --card-scale-offset: 0.9;
+  --opacity: 0.4;
+}
+
+.infoList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: var(--card-height);
+  pointer-events: none;
+}
+.infoList .info__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.info {
+  margin-bottom: calc(var(--card-height) / 8);
+  margin-left: calc(var(--card-width) / 1.5);
+  transform: translateZ(2rem);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+}
+.info .text {
+  position: relative;
+  font-family: "Montserrat";
+  font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+  white-space: nowrap;
+  color: #fff;
+  width: fit-content;
+}
+.info .name,
+.info .location {
+  text-transform: uppercase;
+}
+.info .location {
+  font-weight: 800;
+}
+.info .location {
+  --mg-left: 40px;
+  --text-size-offset: 0.12;
+  font-weight: 600;
+  margin-left: var(--mg-left);
+  margin-bottom: calc(var(--mg-left) / 2);
+  padding-bottom: 0.8rem;
+}
+.info .location::before, .info .location::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  left: 0%;
+  transform: translate(calc(-1 * var(--mg-left)), -50%);
+}
+.info .location::before {
+  top: 50%;
+  width: 20px;
+  height: 5px;
+}
+.info .location::after {
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+}
+.info .description {
+  --text-size-offset: 0.065;
+  font-weight: 500;
+}
+.info.current--info {
+  opacity: 1;
+  display: block;
+}
+.info.previous--info, .info.next--info {
+  opacity: 0;
+  display: none;
+}
+
+.loading__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 200;
+}
+.loading__wrapper .loader--text {
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.loading__wrapper .loader {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.loading__wrapper .loader span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --card-width: 250px;
+    --card-height: 400px;
+  }
+}
+

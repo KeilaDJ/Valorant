@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="img/valorant-logo-icon.png" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/28bfdf4ff8.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/b73c61d54d.js" crossorigin="anonymous"></script>
+        <title>Arsenal de Valorant</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Circle Container -->
+            <div class="circle-container">
+                <div class="circle">
+                    <button id="close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <button id="open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+                <!-- body content -->
+            <div class="content">
+                <h1>NÓS SOMOS VALORANT</h1>
+                <small>DESAFIE SEUS LIMITES</small>
+                <p>Misture o seu estilo e experiência em um cenário global e competitivo. <br>
+                Você terá 13 rodadas para atacar e defender com disparos certeiros e habilidades táticas. <br>
+                Com apenas uma vida por rodada, você deve pensar mais rápido que o oponente se quiser sobreviver. <br>
+                Encare inimigos nos modos Competitivo e Sem Ranque, além da Disputa da Spike e do Mata-Mata!</p>
+                 <video class="video" autoplay loop muted>
+                    <source src="img/VALORANT_PLAY.mp4" type="video/mp4">
+                </video> 
+            </div>
+        </div>
+
+       <nav>
+            <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="Arsenal.html"><i class="fa-solid fa-person-rifle"></i>Arsenal</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            const open = document.getElementById("open");
+            const close = document.getElementById("close");
+            const container = document.querySelector(".container");
+
+            open.addEventListener("click", () => 
+            container.classList.add("show-nav"));
+
+            close.addEventListener("click", () =>
+            container.classList.remove("show-nav"));
+        </script>
+    </body>
+</html>
